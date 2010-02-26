@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BackLogger</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="header">
+      <div id="account"></div>
+      <h1><a href="#/">BackLogger</a></h1>
+    </div>
+    <div id="content">
+      <ol id="backlog"></ol>
+      <div id="new_story">
+        <h3>Add new story to backlog</h3>
+        <form>
+          <div>
+            <label>
+              Name<br/>
+              <input type="text" name="name"/>
+            </label>
+          </div>
+          <div>
+            <label>
+              Complexity<br/>
+              <select name="complexity">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>5</option>
+                <option>8</option>
+                <option>13</option>
+                <option>21</option>
+                <option>34</option>
+                <option>55</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label>
+              Business value<br/>
+              <select name="business_value">
+                <option>high</option>
+                <option>med</option>
+                <option>low</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label>
+              Acceptance criteria<br/>
+              <textarea name="acceptance_criteria"></textarea>
+            </label>
+            <aside>
+              let's make this take markdown!
+            </aside>
+          </div>
+          <div>
+            <label>
+              Notes<br/>
+              <textarea name="notes"></textarea>
+            </label>
+            <aside>
+              guess i'll try markdown, too!
+            </aside>
+          </div>
+          <input type="submit" value="save"/>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/_utils/script/json2.js"></script>
+  <script src="/_utils/script/jquery.js"></script>
+  <script src="/_utils/script/jquery.couch.js"></script>
+  <script src="/_utils/script/sha1.js"></script>
+  <script src="vendor/couchapp/jquery.couch.app.js"></script>
+  <script src="vendor/couchapp/jquery.couch.app.util.js"></script>
+  <script src="vendor/couchapp/jquery.evently.js"></script>
+  <script src="vendor/couchapp/jquery.pathbinder.js"></script>
+  <script src="vendor/couchapp/jquery.mustache.js"></script>
+  <script src="script/md5.js"></script>
+  <script src="script/app.js"></script>
+</html>
