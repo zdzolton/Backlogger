@@ -7,3 +7,12 @@ body {
 form div {
   padding: 10px 0;
 }
+
+#content {
+  margin: 0 auto;
+  width: 400px;
+}
+
+#new_story {
+  border: 1px #444 solid;
+}

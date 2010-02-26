@@ -12,7 +12,7 @@ function(e) {
   $$(f).app.db.saveDoc(
     doc,
     {
-      success : function() {
+      success: function() {
         alert('added story to backlog');
         $(':text,textarea').val('');
         $('select').val(0);
