@@ -7,7 +7,7 @@ function(e) {
     complexity: $("select[name=complexity]", f).val(),
     business_value: $("select[name=business_value]", f).val(),
     acceptance_criteria: $("textarea[name=acceptance_criteria]", f).val(),
-    notes: $("textarea[name=notes]", f).val(),
+    notes: $("textarea[name=notes]", f).val()
   };
   $$(f).app.db.saveDoc(
     doc,
