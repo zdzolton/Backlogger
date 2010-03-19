@@ -9,7 +9,7 @@ function(e) {
     acceptance_criteria: $("textarea[name=acceptance_criteria]", f).val(),
     notes: $("textarea[name=notes]", f).val()
   };
-  $('#new_story_dialog').dialog('close');
+  $('#story_dialog').dialog('close');
   $$(f).app.view('backlog-stories', {
     limit: 1,
     descending: true,
@@ -20,7 +20,6 @@ function(e) {
         doc,
         {
           success: function() {
-            alert('story added!');
             $(':text,textarea', f).val('');
             $('select', f).val(0);
           }

@@ -1,6 +1,6 @@
 function() {
-  $('#new_story_dialog')
-    .trigger("show", [])
+  $('#story_dialog')
+    .trigger("showNew", [])
     .dialog({
       modal: true,
       width: 350,
