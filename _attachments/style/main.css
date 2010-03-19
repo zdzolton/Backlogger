@@ -5,14 +5,10 @@ body {
 }
 
 form div {
-  padding: 10px 0;
+  padding: 10px 2px;
 }
 
 #content {
   margin: 0 auto;
   width: 400px;
-}
-
-#new_story {
-  border: 1px #444 solid;
 }

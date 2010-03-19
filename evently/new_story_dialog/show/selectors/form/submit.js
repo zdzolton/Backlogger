@@ -9,13 +9,14 @@ function(e) {
     acceptance_criteria: $("textarea[name=acceptance_criteria]", f).val(),
     notes: $("textarea[name=notes]", f).val()
   };
+  $('#new_story_dialog').dialog('close');
   $$(f).app.db.saveDoc(
     doc,
     {
       success: function() {
-        alert('added story to backlog');
-        $(':text,textarea').val('');
-        $('select').val(0);
+        alert('story added!');
+        $(':text,textarea', f).val('');
+        $('select', f).val(0);
       }
     }
   );
