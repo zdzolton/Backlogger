@@ -10,15 +10,23 @@ function(e) {
     notes: $("textarea[name=notes]", f).val()
   };
   $('#new_story_dialog').dialog('close');
-  $$(f).app.db.saveDoc(
-    doc,
-    {
-      success: function() {
-        alert('story added!');
-        $(':text,textarea', f).val('');
-        $('select', f).val(0);
-      }
+  $$(f).app.view('backlog-stories', {
+    limit: 1,
+    descending: true,
+    success: function(res) {
+      var lastPriority = ((res.rows[0] || { priority: 0 }).priority || 1);
+      doc.priority = lastPriority + 1;
+      $$(f).app.db.saveDoc(
+        doc,
+        {
+          success: function() {
+            alert('story added!');
+            $(':text,textarea', f).val('');
+            $('select', f).val(0);
+          }
+        }
+      );
     }
-  );
-  return false;
+  });
+    return false;
 }
