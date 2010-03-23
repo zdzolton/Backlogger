@@ -1,3 +1,5 @@
 {
-  "view": "backlog-stories"
+  "view": "backlog-stories",
+  "reduce": false,
+  "descending": true
 }

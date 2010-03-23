@@ -10,7 +10,7 @@ function(e) {
       $.log(doc);
       $.extend(doc, {
         name: $("input[name=name]", f).val(),
-        sprint_number: $("input[name=sprint_number]", f).val(),
+        sprint_number: parseInt($("input[name=sprint_number]", f).val()),
         complexity: $("select[name=complexity]", f).val(),
         business_value: $("select[name=business_value]", f).val(),
         acceptance_criteria: $("textarea[name=acceptance_criteria]", f).val(),
