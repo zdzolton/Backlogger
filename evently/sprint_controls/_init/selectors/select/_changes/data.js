@@ -1,8 +1,9 @@
 function(resp) {
   return {
     sprints: $.map(resp.rows, function(row) {
-      var name = row.key ? "Sprint #" + row.key : "Unassigned";
-      var value = row.key || "unassigned";
+      var sprintNumber = row.key[0];
+      var name = sprintNumber ? "Sprint #" + sprintNumber : "Unassigned";
+      var value = sprintNumber || "unassigned";
       return { name: name,  value: value };
     })
   };

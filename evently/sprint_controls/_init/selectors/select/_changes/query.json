@@ -1,5 +1,6 @@
 {
-  "view": "sprints",
-  "group": true,
-  "descending": true
+  "view": "backlog-stories",
+  "group_level": 1,
+  "descending": true,
+  "startkey": ["a"]
 }
