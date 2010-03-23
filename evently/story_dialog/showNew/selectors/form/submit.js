@@ -16,15 +16,7 @@ function(e) {
     success: function(res) {
       var lastPriority = ((res.rows[0] || { priority: 0 }).priority || 1);
       doc.priority = lastPriority + 1;
-      $$(f).app.db.saveDoc(
-        doc,
-        {
-          success: function() {
-            $(':text,textarea', f).val('');
-            $('select', f).val(0);
-          }
-        }
-      );
+      $$(f).app.db.saveDoc(doc);
     }
   });
   return false;
