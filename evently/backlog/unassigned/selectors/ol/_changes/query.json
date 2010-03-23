@@ -1,0 +1,7 @@
+{
+  "view": "backlog-stories",
+  "reduce": false,
+  "descending": true,
+  "startkey": ["unassigned", {}],
+  "endkey": ["unassigned"]
+}

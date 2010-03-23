@@ -1,5 +1,6 @@
 function(doc) {
   if (doc.type == 'story') {
-    emit([doc.sprint_number, doc.priority * -1], doc);
+    var sprintNumber = doc.sprint_number || 'unassigned';
+    emit([sprintNumber, doc.priority * -1], doc);
   }
 }

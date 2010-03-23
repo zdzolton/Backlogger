@@ -2,8 +2,12 @@
 $.couch.app(function(app) {
   $.log('Backlogger Start!');
   $("#story_dialog").evently(app.ddoc.evently.story_dialog, app);
-  $("#backlog").evently(app.ddoc.evently.backlog, app);
-  $("#sprint_controls").evently(app.ddoc.evently.sprint_controls, app);
-
-  $.pathbinder.begin("/");
+  $("#sprint_controls").evently(app.ddoc.evently.sprint_controls, app);  
+  
+  
+  var backlog = app.ddoc.evently.backlog;
+  backlog.sprint = $.extend(true, {}, backlog.unassigned, backlog.sprint);
+  $.log(backlog)
+  $("#backlog").evently(backlog, app);
+  $.pathbinder.begin("/unassigned");
 });
