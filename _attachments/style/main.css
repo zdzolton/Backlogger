@@ -20,6 +20,12 @@ form div {
   background: #FFF;
 }
 
+#sprint_controls {
+  margin: 0 0 5px 0;
+  padding: 8px;
+  background: #DFDFDF;
+}
+
 .story_controls {
   padding: 2px;
   display: none;
