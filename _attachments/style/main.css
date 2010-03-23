@@ -16,6 +16,12 @@ form div {
 #content {
   padding: 10px 4px 30px 4px;
   margin: 0 auto;
-  width: 400px;
+  width: 570px;
   background: #FFF;
+}
+
+.story_controls {
+  padding: 2px;
+  display: none;
+  background: #DFDFDF;
 }
