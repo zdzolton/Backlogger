@@ -15,8 +15,13 @@ function(e) {
     limit: 1,
     descending: true,
     success: function(res) {
-      var lastPriority = ((res.rows[0] || { priority: 0 }).priority || 1);
+      $.log('Got view result for priority:');
+      $.log(res);
+      var firstRow = res.rows[0];
+      var lastPriority = firstRow ? firstRow.key : 1;
       doc.priority = lastPriority + 1;
+      $.log('Saving document:');
+      $.log(doc);
       app.db.saveDoc(doc);
     }
   });
