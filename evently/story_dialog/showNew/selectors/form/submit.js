@@ -1,5 +1,6 @@
 function(e) {
   var f = $(this);
+  var app = $$(f).app;
   var doc = {
     type: "story",
     created_at: new Date(),
@@ -10,13 +11,13 @@ function(e) {
     notes: $("textarea[name=notes]", f).val()
   };
   $('#story_dialog').dialog('close');
-  $$(f).app.view('backlog-stories', {
+  app.view('backlog-stories', {
     limit: 1,
     descending: true,
     success: function(res) {
       var lastPriority = ((res.rows[0] || { priority: 0 }).priority || 1);
       doc.priority = lastPriority + 1;
-      $$(f).app.db.saveDoc(doc);
+      app.db.saveDoc(doc);
     }
   });
   return false;
