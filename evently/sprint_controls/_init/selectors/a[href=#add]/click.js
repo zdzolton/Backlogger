@@ -4,7 +4,7 @@ function() {
     []
   ).dialog({
     modal: true,
-    width: 350,
-    height: 550
+    width: 400,
+    height: 560
   });
 }

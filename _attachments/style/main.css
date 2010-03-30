@@ -37,3 +37,8 @@ form div {
 #add_story {
   float: right;
 }
+
+textarea {
+  width: 340px;
+  height: 90px;
+}
