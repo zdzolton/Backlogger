@@ -1,7 +1,7 @@
 function(e) {
   var f = $(this);
   var app = $$(f).app;
-  var sprintNumber = parseInt($('#sprint_filter').val()) || 'unassigned';
+  var sprintNumber = parseInt($$('#sprint_filter').selectedSprintNumber) || 'unassigned';
   $.log('Sprint number:');
   $.log(sprintNumber);
   var doc = {

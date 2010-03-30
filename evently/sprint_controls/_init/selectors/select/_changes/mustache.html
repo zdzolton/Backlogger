@@ -1,4 +1,4 @@
 <option value="unassigned">Unassigned</option>
 {{#sprints}}
-  <option value="{{{value}}}">{{name}}</option>
+  <option value="{{{value}}}" {{#isSelected}}selected="selected"{{/isSelected}}>{{name}}</option>
 {{/sprints}}
