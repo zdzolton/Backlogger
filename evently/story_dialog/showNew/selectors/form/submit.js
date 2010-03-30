@@ -1,7 +1,9 @@
 function(e) {
   var f = $(this);
   var app = $$(f).app;
-  var sprintNumber = parseInt($('#sprint_filter').val());
+  var sprintNumber = parseInt($('#sprint_filter').val()) || 'unassigned';
+  $.log('Sprint number:');
+  $.log(sprintNumber);
   var doc = {
     type: "story",
     created_at: new Date(),
@@ -24,6 +26,8 @@ function(e) {
       $.log(res);
       var firstRow = res.rows[0];
       var lastPriority = firstRow ? firstRow.value.priority : 1;
+      $.log('Last priority:');
+      $.log(lastPriority);
       doc.priority = lastPriority + 1;
       $.log('Saving document:');
       $.log(doc);
