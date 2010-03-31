@@ -1,6 +1,6 @@
 function(e) {
   var params = e.data.args[1];
-  var sprintNumber = parseInt(params.number);
+  var sprintNumber = params.number;
   $.log('Building backlog query for Sprint #' + sprintNumber);
   return {
     view: "backlog-stories",
