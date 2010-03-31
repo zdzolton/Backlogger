@@ -1,4 +1,7 @@
 function(resp) {
+  var selectedSprintNumber = $$('#sprint_filter').selectedSprintNumber;
+  $.log("Selected sprint number:");
+  $.log(selectedSprintNumber);
   return {
     sprints: $.map(resp.rows, function(row) {
       var sprintNumber = row.key[0];
@@ -8,9 +11,6 @@ function(resp) {
         name: name,  
         value: value, 
         isSelected: function() {
-          var selectedSprintNumber = $$('#sprint_filter').selectedSprintNumber;
-          $.log("Selected sprint number:");
-          $.log(selectedSprintNumber);
           return selectedSprintNumber && selectedSprintNumber == String(sprintNumber);
         }
       };
