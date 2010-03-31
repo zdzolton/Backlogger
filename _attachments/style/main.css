@@ -5,19 +5,32 @@ body {
   background: #BED2F1;
 }
 
+#content {
+  padding: 10px 4px 30px 4px;
+  margin: 0 auto;
+  width: 570px;
+  background: #FFF;
+}
+
+#header {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+#account {
+  width: 180px;
+  float: right;
+  text-align: right;
+  background-color: white;
+}
+
 h1 {
   margin: 0 0 25px 0;
 }
 
 form div {
   padding: 10px 2px;
-}
-
-#content {
-  padding: 10px 4px 30px 4px;
-  margin: 0 auto;
-  width: 570px;
-  background: #FFF;
 }
 
 #sprint_controls {
