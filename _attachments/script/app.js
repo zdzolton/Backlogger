@@ -11,5 +11,5 @@ $.couch.app(function(app) {
   $.log(backlog)
   $("#backlog").evently(backlog, app);
   
-  $.pathbinder.begin("/unassigned");
+  $.pathbinder.begin(location.hash || "/unassigned");
 });
