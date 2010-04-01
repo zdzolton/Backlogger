@@ -1,6 +1,6 @@
 function(e) {
   
-  function determineSprintNumber() {
+  function parseSprintNumber() {
     var sprintNumber = $("input[name=sprint_number]", f).val();
     var sprintYear = $("input[name=sprint_year]", f).val();
     $.log('A');
@@ -45,7 +45,7 @@ function(e) {
       var oldSprintNum = doc.sprint_number;
       
       $.log('New sprint number:');
-      var sprintNumber = determineSprintNumber();
+      var sprintNumber = parseSprintNumber();
       if (typeof sprintNumber === 'undefined') {
         $.log('Bailing early for validation problem!');
         return;
@@ -68,30 +68,16 @@ function(e) {
       } else {
         $.log('Sprint number changed:');
         $.log(doc.sprint_number);
-        
-        // TODO: merge with code from showNew.selectors.form.submit
-        app.view('backlog-stories', {
-          limit: 1,
-          descending: false,
-          reduce: false,
-          startkey: [doc.sprint_number],
-          endkey: [doc.sprint_number, {}],
-          success: function(res) {
-            $.log('Got view result for priority:');
-            $.log(res);
-            var firstRow = res.rows[0];
-            var lastPriority = firstRow ? firstRow.value.priority : 1;
-            $.log('Last priority:');
-            $.log(lastPriority);
-            doc.priority = lastPriority + 1;
-            $.log('Saving document:');
-            $.log(doc);
-            app.db.saveDoc(doc);
-          }
+        app.getHighestPriorityForSprint(sprintNumber, function(priority) {
+          $.log('Last priority:');
+          $.log(priority);
+          doc.priority = priority + 1;
+          $.log('Saving document:');
+          $.log(doc);
+          app.db.saveDoc(doc);
         });
       }
     }
   });
-  
   return false;
 }

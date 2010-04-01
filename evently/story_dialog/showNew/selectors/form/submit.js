@@ -15,27 +15,14 @@ function(e) {
     sprint_number: sprintNumber
   };
   $('#story_dialog').dialog('close');
-  
-  // TODO: Refactor getting highest priority for sprint into own function
-  app.view('backlog-stories', {
-    limit: 1,
-    descending: false,
-    reduce: false,
-    startkey: [sprintNumber],
-    endkey: [sprintNumber, {}],
-    success: function(res) {
-      $.log('Got view result for priority:');
-      $.log(res);
-      var firstRow = res.rows[0];
-      var lastPriority = firstRow ? firstRow.value.priority : 1;
-      $.log('Last priority:');
-      $.log(lastPriority);
-      doc.priority = lastPriority + 1;
-      $.log('Saving document:');
-      $.log(doc);
-      app.db.saveDoc(doc);
-    }
+
+  app.getHighestPriorityForSprint(sprintNumber, function(priority) {
+    $.log('Last priority:');
+    $.log(priority);
+    doc.priority = priority + 1;
+    $.log('Saving document:');
+    $.log(doc);
+    app.db.saveDoc(doc);
   });
-  
   return false;
 }

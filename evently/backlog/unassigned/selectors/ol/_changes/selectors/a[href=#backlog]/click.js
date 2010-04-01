@@ -6,26 +6,9 @@ function() {
   var app = $$(this).app;
   var db = app.db;
 
-  // TODO: refactor this out, too!
-  function getLowestPriorityForBacklog(cb) {
-    app.view('backlog-stories', {
-      limit: 1,
-      reduce: false,
-      endkey: ['unassigned'],
-      startkey: ['unassigned', {}],
-      success: function(res) {
-        $.log('Got view result for lowest Backlog priority:');
-        $.log(res);
-        var firstRow = res.rows[0];
-        var firstPriority = firstRow ? firstRow.value.priority : 1;
-        cb(firstPriority);
-      }
-    });
-  }
-
   db.openDoc(id, {
     success: function(doc) {      
-      getLowestPriorityForBacklog(function(priority) {
+      app.getLowestPriorityForBacklog(function(priority) {
         $.log('Lowest priority:');
         $.log(priority);
         doc.priority = priority - 1;
