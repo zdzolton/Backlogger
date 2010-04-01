@@ -1,5 +1,5 @@
 function(resp) {
-  var selectedSprintNumber = $$('#sprint_filter').selectedSprintNumber;
+  var selectedSprintNumber = $$('#sprint_filter').selectedSprintNumber || "unassigned";
   $.log("Selected sprint number:");
   $.log(selectedSprintNumber);
   return {
@@ -11,7 +11,7 @@ function(resp) {
         name: name,  
         value: value, 
         isSelected: function() {
-          return selectedSprintNumber && selectedSprintNumber == String(sprintNumber);
+          return selectedSprintNumber == sprintNumber;
         }
       };
     })
