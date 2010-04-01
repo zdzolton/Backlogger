@@ -12,19 +12,6 @@ body {
   background: #FFF;
 }
 
-#header {
-  margin: 0;
-  padding: 0;
-  clear: both;
-}
-
-#account {
-  width: 180px;
-  float: right;
-  text-align: right;
-  background-color: white;
-}
-
 h1 {
   margin: 0 0 25px 0;
 }
