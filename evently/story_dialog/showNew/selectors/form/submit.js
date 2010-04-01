@@ -15,6 +15,8 @@ function(e) {
     sprint_number: sprintNumber
   };
   $('#story_dialog').dialog('close');
+  
+  // TODO: Refactor getting highest priority for sprint into own function
   app.view('backlog-stories', {
     limit: 1,
     descending: false,
@@ -34,5 +36,6 @@ function(e) {
       app.db.saveDoc(doc);
     }
   });
+  
   return false;
 }

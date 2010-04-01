@@ -3,6 +3,9 @@
     <p>
       <span class="story_name">{{name}}</span>
       <span class="story_controls">
+        {{#is_assigned_sprint}}
+          <a href="#backlog">backlog</a>
+        {{/is_assigned_sprint}}
         <a href="#edit">edit</a>
         <a href="#delete">delete</a>
       </span>
