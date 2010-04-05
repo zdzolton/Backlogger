@@ -37,7 +37,9 @@ $.couch.app(function(app) {
   };
   
   $("#story_dialog").evently(app.ddoc.evently.story_dialog, app);
-  $("#sprint_controls").evently(app.ddoc.evently.sprint_controls, app);  
+  $("#move_dialog").evently(app.ddoc.evently.move_dialog, app);
+  $("#sprint_controls").evently(app.ddoc.evently.sprint_controls, app);
+  $('#move_stories').evently(app.ddoc.evently.move_stories, app);
   
   // This hack allows the backlog's "sprint" event to share templates
   // and behaviors from the "unassigned" event:

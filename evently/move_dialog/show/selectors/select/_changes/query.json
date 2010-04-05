@@ -1,0 +1,6 @@
+{
+  "view": "backlog-stories",
+  "group_level": 1,
+  "descending": true,
+  "startkey": ["a"]
+}

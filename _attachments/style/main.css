@@ -34,11 +34,17 @@ form div {
   font-size: 75%;
 }
 
-#add_story {
+#sprint_controls_link {
   float: right;
 }
 
 textarea {
   width: 340px;
   height: 90px;
+}
+
+.highlight_link {
+  font-color: white;
+  font-weight: bold;
+  background-color: #DFB3C0;
 }

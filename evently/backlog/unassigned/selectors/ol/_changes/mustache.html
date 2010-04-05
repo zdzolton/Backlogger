@@ -3,9 +3,7 @@
     <p>
       <span class="story_name">{{name}}</span>
       <span class="story_controls">
-        {{#is_assigned_sprint}}
-          <a href="#backlog">backlog</a>
-        {{/is_assigned_sprint}}
+        <a href="#{{{move_action}}}" style="{{{move_style}}}">{{move_action}}</a>
         <a href="#edit">edit</a>
         <a href="#delete">delete</a>
       </span>
