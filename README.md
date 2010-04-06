@@ -14,8 +14,17 @@ development environment.
 
 Securing Access
 ---
+BackLogger, without additional configuration, allow only users logged
+into the server to change data, however anyone can do reads.
+
 If you don't want unregistered users to see your data, you'll want to
-login into Futon as a server admin user, click on the database for
-your project backlog and then click the "Security..." button. In the
-popup dialog, add double-quoted values to the arrays for reader roles
-or users.
+us Futon to lock-down your sprint backlog database:
+* login into Futon as a server admin user
+* open up your sprint backlog database
+* click the "Security..." button
+* add double-quoted values to the arrays for reader roles or users
+
+After doing this, anonymous user wont be able to see BackLogger, so
+you'll also need to push up BackLogger-Login:
+
+http://github.com/zdzolton/backlogger-login
