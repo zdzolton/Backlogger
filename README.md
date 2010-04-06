@@ -28,3 +28,5 @@ After doing this, anonymous user wont be able to see BackLogger, so
 you'll also need to push up BackLogger-Login:
 
 http://github.com/zdzolton/backlogger-login
+
+
