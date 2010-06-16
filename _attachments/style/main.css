@@ -29,9 +29,9 @@ form div {
 
 .story_controls {
   padding: 2px;
-  display: none;
   background: #DFDFDF;
   font-size: 75%;
+  float: right;
 }
 
 #sprint_controls_link {
